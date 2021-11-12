@@ -1,0 +1,10 @@
+<ion-item lines="none" class="w-full" (click)="goTo(blog)">
+  <ion-label>
+    <h5>{{ blog?.subject }}</h5><br>
+    <p>{{ blog?.publishText }}</p>
+  </ion-label>
+  <div class="display">
+    <button>Blog</button>
+    <ion-icon name="arrow-forward-circle-outline" size="large" slot="end"></ion-icon>
+  </div>
+</ion-item>

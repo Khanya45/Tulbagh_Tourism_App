@@ -1,0 +1,27 @@
+ion-button{
+    background: #43A4EF;
+    border-radius: 45px;
+    width: 93px;
+    height: 33px;
+    margin-top:10px;
+}
+
+img{
+    width: 252px;
+    height: 160px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.gallery{
+    background: #1B5D92;
+}
+
+.gall_more{
+    display: flex;
+    justify-content: flex-end;
+    margin:10px;
+    margin-top: 0px;
+    // width: 100%;
+}

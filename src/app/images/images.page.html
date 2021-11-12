@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-text-center" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-menu-button></ion-menu-button>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content><br>
+  <div class="header_gall">
+    <ion-icon name="images-outline" size="large"></ion-icon>
+    <ion-label class="header">Gallery</ion-label>
+  </div>
+  <!-- <div *ngFor="let photo of photos" class="photo_grid">
+    <img [src]="photo?.mediumImageUrl">
+  </div> -->
+  <ion-grid>
+    <ion-row  *ngFor="let photo of photos">
+      <ion-col>
+        <img [src]="photo?.mediumImageUrl">
+      </ion-col>
+      <!-- <ion-col>
+        <img [src]="photo?.mediumImageUrl">
+      </ion-col> -->
+    </ion-row> 
+  </ion-grid>
+
+</ion-content>
