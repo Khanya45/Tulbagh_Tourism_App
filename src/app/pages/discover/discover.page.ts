@@ -88,6 +88,10 @@ export class DiscoverPage implements OnInit {
     });
   }
 
+  goToSos() {
+    this.navCtrl.navigateForward('sos-grid');
+  }
+
   goToSOS(){
     this.navCtrl.navigateForward('sos');
   }

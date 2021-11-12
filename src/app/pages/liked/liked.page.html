@@ -7,25 +7,16 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-  <!-- <ion-toolbar>
-    <ion-chip slot="start">
-      <ion-icon name="funnel"></ion-icon>
-      <ion-label>Filter</ion-label>
-    </ion-chip>
-    <ion-chip slot="start">
-      <ion-icon name="swap-vertical"></ion-icon>
-      <ion-label>Sort</ion-label>
-    </ion-chip>
-  </ion-toolbar> -->
 </ion-header><br>
 
 <ion-content>
+
   <ion-label class="header">Businesses</ion-label><br>
-  <ion-chip>
+  <ion-chip (click)="popFilter($event)">
     <ion-icon name="funnel"></ion-icon>
     <ion-label class="chip_label">Filter</ion-label>
   </ion-chip>
-  <ion-chip>
+  <ion-chip (click)="popSort($event)">
     <ion-icon name="filter"></ion-icon>
     <ion-label class="chip_label">Sort</ion-label>
   </ion-chip>

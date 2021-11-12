@@ -1,0 +1,13 @@
+<ion-list>
+  <ion-item lines="full">
+    <ion-label>Sort By</ion-label>
+    <ion-select placeholder="Select One" [(ngModel)]="sortBy">
+      <ion-select-option [value]="alphabetical"
+        >Alphabetical
+      </ion-select-option>
+      <ion-select-option [value]="distance"
+        >Distance
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>

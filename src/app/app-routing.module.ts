@@ -86,7 +86,11 @@ const routes: Routes = [
   {
     path: 'sos',
     loadChildren: () => import('./pages/sos/sos.module').then( m => m.SosPageModule)
+  },  {
+    path: 'sos-grid',
+    loadChildren: () => import('./pages/sos-grid/sos-grid.module').then( m => m.SosGridPageModule)
   },
+
 
 ];
 @NgModule({
