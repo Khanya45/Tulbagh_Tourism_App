@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, PopoverController, AlertController } from '@ionic/angular';
-import { PopOverFilterComponent } from 'src/app/pop-over-filter/pop-over-filter.component';
-import { PopOverSortComponent } from 'src/app/pop-over-sort/pop-over-sort.component';
 import { LikedQuery, LikedService } from 'src/app/stores/liked';
 
 @Component({
@@ -10,9 +8,6 @@ import { LikedQuery, LikedService } from 'src/app/stores/liked';
   styleUrls: ['./liked.page.scss'],
 })
 export class LikedPage implements OnInit {
-  filterBy : any;
-  sortBy : any;
-  testCheckboxResult: any;
   filteredList : Array<any> = [];
   likedList : any;
   sortList: Array<any> = [];
@@ -39,12 +34,7 @@ export class LikedPage implements OnInit {
     });
   }
 
-  // async popFilter(event){
-  //   const popover = await this.popOverController.create({
-  //     component: PopOverFilterComponent, event
-  //   })
-  //   return await popover.present();
-  // }
+
    async popFilter(event) {
     let alert =  await this.alertCtrl.create({
       inputs: [
@@ -85,7 +75,6 @@ export class LikedPage implements OnInit {
             if (this.filteredList.length > 0){
               this.filteredList = []
             }
-            console.log('Checkbox data:', data);
             data.forEach(selectedValue => {
               if (this.likedList.length > 0){
                 this.likedList = this.likedQuery.getAll();
@@ -98,7 +87,6 @@ export class LikedPage implements OnInit {
               })
               
             });
-            console.log(this.filteredList)
             this.likedList = this.filteredList
             
           }
@@ -108,12 +96,6 @@ export class LikedPage implements OnInit {
     await alert.present();
   }
     
-  // async popSort(event){
-  //   const popOver = await this.popOverController.create({
-  //     component: PopOverSortComponent, event
-  //   })
-  //   return await popOver.present();
-  // }
 
   async popSort(event) {
     let alert =  await this.alertCtrl.create({
@@ -137,16 +119,12 @@ export class LikedPage implements OnInit {
         {
           text: 'Okay',
           handler: data => {
-            console.log(data[0])
-              // this.likedList = this.likedQuery.getAll();
               if (data[0] == "Distance"){
                 this.sortList = this.likedList.sort((a, b) => (a.distanceKm > b.distanceKm) ? 1 : -1)
               }
               else{
                 this.sortList = this.likedList.sort((a, b) => (a.title > b.title) ? 1 : -1)
               }
-              // this.sortList = this.sortList;
-              console.log(this.sortList)
               this.likedList = this.sortList
             
             }
