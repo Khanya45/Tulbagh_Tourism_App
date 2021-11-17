@@ -37,6 +37,7 @@ export class ProfileService {
         }
       });
   }
+  
   async getWiki(profile = 'tulbagh-tourism-tulbagh') {
     return await this.http
       .request('GET', 'wiki', {
@@ -63,6 +64,18 @@ export class ProfileService {
         }
       });
   }
+
+  async getMemberList(profile) {
+    return await this.http
+      .request('GET', 'memberList', {
+        profile,
+        items: '200',
+        view: 'all',
+        format: 'json',
+      })
+      .then((result) => result[0]?.status?.total);
+  }
+
 
   async presentToast(followed: boolean) {
     const toast = await this.toastCtrl.create({

@@ -15,8 +15,8 @@
     <ion-label>Select a category:</ion-label><br>
   </div>
   <ion-grid>
-    <ion-row class="ion-text-center">
-      <ion-col>
+    <ion-row class="ion-text-center" [ngClass]="{ 'border-0 border-b border-black border-solid': !i }">
+      <ion-col id="vl">
         <ion-icon name="medkit-outline" size="large"></ion-icon>
         <p>Healthcare <br><span>Professionals</span></p>
       </ion-col>

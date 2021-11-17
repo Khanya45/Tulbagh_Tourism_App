@@ -1,11 +1,11 @@
 <ion-list>
   <ion-item lines="full">
     <ion-label>Sort By</ion-label>
-    <ion-select placeholder="Select One" [(ngModel)]="sortBy">
-      <ion-select-option [value]="alphabetical"
+    <ion-select placeholder="Select One" [(ngModel)]="sortBy" (ionChange)="sortByAlpha($event)">
+      <ion-select-option [value]="Alphabetical"
         >Alphabetical
       </ion-select-option>
-      <ion-select-option [value]="distance"
+      <ion-select-option [value]="Distance"
         >Distance
       </ion-select-option>
     </ion-select>

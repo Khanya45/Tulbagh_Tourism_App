@@ -6,6 +6,7 @@ import { UserState, UserStore } from './user.store';
 export class UserQuery extends Query<UserState> {
   userName = this.select((state) => state.data.userName);
   avatar = this.select((state) => state.data.userImageUrl);
+  profile = this.getValue().data.userUniqueId;
   isGuest = this.select((state) => state.data.isGuest === 'true');
 
   constructor(protected store: UserStore) {

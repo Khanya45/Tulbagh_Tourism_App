@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="primary">
+  <ion-toolbar class="ion-text-center" color="primary">
     <ion-title>Liked</ion-title>
     <ion-buttons slot="end">
       <ion-button>
@@ -21,16 +21,52 @@
     <ion-label class="chip_label">Sort</ion-label>
   </ion-chip>
 
-  <ion-grid>
-    <ion-row *ngFor="let profile of likedQuery.list | async">
-      <ion-col>
-        <ion-card class="ion-no-margin" (click)="goTo(profile)">
-          <img [src]="profile?.image200Url" width="100%" />
-          <ion-item lines="none">
-            <ion-label>{{profile?.title}}</ion-label>
-          </ion-item>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <!-- <div *ngIf="filteredList.length == 0;else other_content"> -->
+    <ion-grid><!-- *ngIf="sortList.length == 0; else elseSort" -->
+      <ion-row *ngFor="let profile of likedList">
+        <ion-col>
+          <ion-card class="ion-no-margin" (click)="goTo(profile)">
+            <img [src]="profile?.image200Url" width="100%" />
+            <ion-item lines="none">
+              <ion-label>{{profile?.title}}</ion-label>
+              <p slot="end">{{ profile?.distanceKm}}km</p>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  <!-- </div> -->
+
+  <!-- <ng-template #other_content>
+    <ion-grid>
+      <ion-row *ngFor="let profile of filteredList">
+        <ion-col>
+          <ion-card class="ion-no-margin" (click)="goTo(profile)">
+            <img [src]="profile.image200Url" width="100%" />
+            <ion-item lines="none">
+              <ion-label>{{profile.title}}</ion-label>
+              <p slot="end">{{ profile.distanceKm}}km</p>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template>
+
+  <ng-template #elseSort>
+    <ion-grid>
+      <ion-row *ngFor="let profile of sortList">
+        <ion-col>
+          <ion-card class="ion-no-margin" (click)="goTo(profile)">
+            <img [src]="profile.image200Url" width="100%" />
+            <ion-item lines="none">
+              <ion-label>{{profile.title}}</ion-label>
+              <p slot="end">{{ profile.distanceKm}}km</p>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ng-template> -->
+
 </ion-content>

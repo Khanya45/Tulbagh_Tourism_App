@@ -92,6 +92,23 @@ export class UserService {
       });
   }
 
+  async getSettings() {
+    return await this.http
+      .request('GET', 'settings', {
+        format: 'json',
+      })
+      .then((result) => result[0]?.objectList[0]);
+  }
+
+  async updateSettings(payload) {
+    return await this.http
+      .request('POST', 'settings', {
+        ...payload,
+        format: 'json',
+      })
+      .then((result) => result[0].status.code === 0);
+  }
+
   async getInfo(uniqueId) {
     return await this.http
       .request('GET', 'show', {

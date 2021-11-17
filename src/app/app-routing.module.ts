@@ -90,6 +90,10 @@ const routes: Routes = [
     path: 'sos-grid',
     loadChildren: () => import('./pages/sos-grid/sos-grid.module').then( m => m.SosGridPageModule)
   },
+  {
+    path: 'account',
+    loadChildren: () => import('./pages/account/account.module').then( m => m.AccountPageModule)
+  },
 
 
 ];

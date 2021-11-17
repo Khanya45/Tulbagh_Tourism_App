@@ -1,25 +1,17 @@
 <ion-list>
   <ion-item lines="full">
     <ion-label>Filter</ion-label>
-    <ion-select [(ngModel)]="filterBy">
-      <ion-select-option [value]="accommodations"
-        >Accommodations
-      </ion-select-option>
-      <ion-select-option [value]="winaries"
-        >Winaries
-      </ion-select-option>
-      <ion-select-option [value]="wedding-venues"
-        >Wedding Venues
-      </ion-select-option>
-      <ion-select-option [value]="food-drinks"
-        >Food & Drinks
-      </ion-select-option>
-      <ion-select-option [value]="activities"
-        >Activities
-      </ion-select-option>
-      <ion-select-option [value]="health-beauty"
-        >Health & Beauty
-      </ion-select-option>
+    <ion-select [(ngModel)]="filterBy" multiple="true" (ionChange)="filter($event)">
+      <ion-option [value]="Accommodation"
+        >Accommodation</ion-option>
+      <ion-option [value]="Winery"
+        >Winery</ion-option>
+      <ion-option [value]="Weddings"
+        >Weddings</ion-option>
+      <ion-option [value]="Drinks"
+        >Food & Dining</ion-option>
+      <ion-option [value]="Activities"
+        >Other</ion-option>
     </ion-select>
   </ion-item>
 </ion-list>
