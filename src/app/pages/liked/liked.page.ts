@@ -16,7 +16,6 @@ export class LikedPage implements OnInit {
     private likedService: LikedService,
     public likedQuery: LikedQuery,
     private navCtrl: NavController,
-    private popOverController: PopoverController,
     public alertCtrl: AlertController,
   ) {}
 
