@@ -19,8 +19,6 @@ export class PromotionService {
       .then((result) => {
         if (result[0]?.objectList?.length > 0) {
           this.promotionStore.upsertMany(result[0].objectList);
-          // console.log(result[0].objectList[0].html)
-          // this.promotionStore.remove(null);
           this.promotionStore.remove(
             (entity) =>
             !result[0].objectList.some(
