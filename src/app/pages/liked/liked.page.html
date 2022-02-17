@@ -35,4 +35,18 @@
       </ion-row>
     </ion-grid>
   
+    <!-- <ion-grid>
+      <ion-row *ngFor="let profile of likedList">
+        <ion-col>
+          <ion-card class="ion-no-margin" (click)="goTo(profile)">
+            <img [src]="profile?.image200Url" width="100%" />
+            <ion-item lines="none">
+              <ion-label>{{profile?.title}}</ion-label>
+              <p slot="end">{{ profile?.distanceKm}}km</p>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid> -->
+  
 </ion-content>
